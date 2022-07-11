@@ -1,0 +1,12 @@
+String基本操作
+转换函数：
+字符串转int型
+操作函数：(包括insert(),erase(),find(),substr(),reverse())
+
+substr()三种函数格式：
+1.substr(string string,int a,int b);  //string为需要截取的字符串 a表示截取字符串的起始位置(注：当a等于0或1时，都是从第一位开始截取)
+2.substr(string string,int a);  //string为需要截取的字符串，a表示从第a个字符开始截取后面所有的字符串
+3.s.substr（pos,n); //返回一个string，包含从pos开始的n个字符
+
+erase()函数:
+1.erase()
