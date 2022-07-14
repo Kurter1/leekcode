@@ -1,1 +1,52 @@
-unordered_map是一种基
+unordered_map是一种基于键值存储的关联容器
+
+有序性和无序性：
+unordered_map的无序体现在内部存储结构为哈希表，以便通过键值快速访问元素
+与之对应的有序的关联容器为map，map的有序体现在内部存储结构为红黑树，存储时元素自动按照从小到大的顺序排列。
+
+而内部存储结构也决定了unordered_map和map在某些特性上的不同：
+查找效率：
+1.unordered_map查找效率更高，可以达到O(1)，但是对于元素子集的范围迭代效率较低
+2.对于map，按照中序遍历的遍历次序，能够方便迭代得出从小到大的元素
+
+无序映射实现了直接访问操作符(operator[])。该操作符允许使用其键值作为参数直接访问映射值
+
+容器方法：
+e.x:
+unordered_map<char,int>map;
+插入元素：
+1.map['a'] = 1;
+2.map.insert({ {'b',2},{'c',3} } );
+
+修改元素：
+map['a'] = 0;
+
+删除元素：
+map.erase('a');  //删除key为'a'的元素
+map.erase(map.begin()); //删除第一个元素
+
+判断元素是否存在
+1.if(map.find('a')!=map.end()) 
+2.if(map.count('a')!=0)
+
+清空所有元素
+map.clear();
+
+遍历并取出键和值
+1.for(auto &a :map)
+{
+  char key = a.first;
+  int value = a.second;
+}
+
+2.for(auto it = map.begin();it != map.end();it++)
+{
+  char key = it->first;
+  int value = it->second;
+}
+
+判断是否为空
+if(map.empty())
+
+求元素个数
+map.size();
